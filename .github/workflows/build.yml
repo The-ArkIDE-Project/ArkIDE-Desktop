@@ -1,7 +1,10 @@
-name: Build Electron App
+name: Build and Release Electron App
 
 on:
   workflow_dispatch:
+
+permissions:
+  contents: write
 
 jobs:
   build:
@@ -20,19 +23,22 @@ jobs:
         with:
           node-version: '20'
       
-      - name: Install dependencies
-        run: npm install
-      
-      - name: Install electron-builder
-        run: npm install --save-dev electron-builder
+      - name: Install dependencies and builder
+        run: |
+          npm install
+          npm install --save-dev electron@latest electron-builder@latest
       
       - name: Build for Linux
         if: matrix.os == 'ubuntu-latest'
-        run: npx electron-builder --linux --x64
+        run: npx electron-builder --linux --x64 --publish always
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
       - name: Build for Windows
         if: matrix.os == 'windows-latest'
-        run: npx electron-builder --windows --x64
+        run: npx electron-builder --windows --x64 --publish always
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
       - name: Upload Linux artifacts
         if: matrix.os == 'ubuntu-latest'

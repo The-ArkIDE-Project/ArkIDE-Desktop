@@ -1,9 +1,35 @@
 {
+  "name": "ark-ide",
+  "version": "1.0.0",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "update": "bash update-source.sh",
+    "build": "electron-builder",
+    "build:linux": "electron-builder --linux",
+    "build:win": "electron-builder --windows"
   },
-  "dependencies": {
-    "electron": "^38.2.1"
-  }
+  "build": {
+    "appId": "com.arc.arkide",
+    "productName": "Ark IDE",
+    "files": [
+      "main.js",
+      "preload.js",
+      "source/**/*",
+      "package.json"
+    ],
+    "linux": {
+      "target": ["AppImage"],
+      "category": "Development"
+    },
+    "win": {
+      "target": ["nsis"],
+      "icon": "icon.ico"
+    }
+  },
+  "devDependencies": {
+    "electron": "^latest",
+    "electron-builder": "^latest"
+  },
+  "dependencies": {}
 }

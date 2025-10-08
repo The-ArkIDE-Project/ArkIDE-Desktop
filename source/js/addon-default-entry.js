@@ -164,7 +164,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".sa-onion-button {\n  position: relative;\n}\n.sa-onion-button:focus-within {\n  background-color: hsla(194, 100%, 50%, 0.2);\n}\n[theme=\"dark\"] .sa-onion-image {\n  filter: brightness(0) invert(0.8);\n}\n.sa-onion-button[data-enabled=\"true\"] .sa-onion-image {\n  filter: brightness(0) invert(1);\n}\n.sa-onion-button[data-enabled=\"true\"] {\n  background-color: #00c3ff;\n}\n\n.sa-onion-group {\n  position: relative;\n  flex-direction: row;\n}\n\n.sa-onion-settings-wrapper {\n  position: absolute;\n  justify-items: center;\n  left: 50%;\n  width: 1.95rem;\n  height: 1.95rem;\n  display: grid;\n}\n\n.sa-onion-settings {\n  position: absolute;\n  bottom: 100%;\n  /* based on the styles for the color dropdown */\n  padding: 4px;\n  border-radius: 4px;\n  border: 1px solid var(--paint-ui-pane-border, #ddd);\n  box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.3);\n  transition-property: bottom, opacity;\n  transition-duration: 500ms;\n  transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);\n  opacity: 0;\n  pointer-events: none;\n  background: var(--ui-primary, white);\n  min-height: 100%;\n  min-width: 100%;\n  display: flex;\n  flex-direction: column;\n  gap: 0.25em;\n}\n.sa-onion-settings[data-visible=\"true\"] {\n  bottom: calc(100% + 22px);\n  pointer-events: auto;\n  opacity: 1;\n}\n\n.sa-onion-settings-line {\n  display: flex;\n  justify-content: flex-end;\n  align-items: baseline;\n  gap: 0.25em;\n}\n\n.sa-onion-settings-input {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  box-sizing: border-box;\n  text-align: center;\n  border: 0;\n  background: transparent;\n  -moz-appearance: textfield;\n  border: 0;\n  outline: 0;\n}\n\n.sa-onion-settings-input::-webkit-outer-spin-button,\n.sa-onion-settings-input::-webkit-inner-spin-button {\n  -webkit-appearance: none;\n  margin: 0;\n}\n\n.sa-onion-settings-tip {\n  position: absolute;\n  bottom: 0;\n  transform: translateY(100%);\n  right: calc(50% - 7px);\n}\n.sa-onion-settings-polygon {\n  fill: var(--ui-primary, white);\n  stroke: var(--paint-ui-pane-border, #ddd);\n}\n\n.sa-onion-settings-label {\n  white-space: nowrap;\n}\n", ""]);
+exports.push([module.i, ".sa-onion-button {\n  position: relative;\n}\n.sa-onion-button:focus-within {\n  background-color: hsla(256, 100%, 50%, 0.2);\n}\n[theme=\"dark\"] .sa-onion-image {\n  filter: brightness(0) invert(0.8);\n}\n.sa-onion-button[data-enabled=\"true\"] .sa-onion-image {\n  filter: brightness(0) invert(1);\n}\n.sa-onion-button[data-enabled=\"true\"] {\n  background-color: #2600ff;\n}\n\n.sa-onion-group {\n  position: relative;\n  flex-direction: row;\n}\n\n.sa-onion-settings-wrapper {\n  position: absolute;\n  justify-items: center;\n  left: 50%;\n  width: 1.95rem;\n  height: 1.95rem;\n  display: grid;\n}\n\n.sa-onion-settings {\n  position: absolute;\n  bottom: 100%;\n  /* based on the styles for the color dropdown */\n  padding: 4px;\n  border-radius: 4px;\n  border: 1px solid var(--paint-ui-pane-border, #ddd);\n  box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.3);\n  transition-property: bottom, opacity;\n  transition-duration: 500ms;\n  transition-timing-function: cubic-bezier(0.23, 1, 0.32, 1);\n  opacity: 0;\n  pointer-events: none;\n  background: var(--ui-primary, white);\n  min-height: 100%;\n  min-width: 100%;\n  display: flex;\n  flex-direction: column;\n  gap: 0.25em;\n}\n.sa-onion-settings[data-visible=\"true\"] {\n  bottom: calc(100% + 22px);\n  pointer-events: auto;\n  opacity: 1;\n}\n\n.sa-onion-settings-line {\n  display: flex;\n  justify-content: flex-end;\n  align-items: baseline;\n  gap: 0.25em;\n}\n\n.sa-onion-settings-input {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  box-sizing: border-box;\n  text-align: center;\n  border: 0;\n  background: transparent;\n  -moz-appearance: textfield;\n  border: 0;\n  outline: 0;\n}\n\n.sa-onion-settings-input::-webkit-outer-spin-button,\n.sa-onion-settings-input::-webkit-inner-spin-button {\n  -webkit-appearance: none;\n  margin: 0;\n}\n\n.sa-onion-settings-tip {\n  position: absolute;\n  bottom: 0;\n  transform: translateY(100%);\n  right: calc(50% - 7px);\n}\n.sa-onion-settings-polygon {\n  fill: var(--ui-primary, white);\n  stroke: var(--paint-ui-pane-border, #ddd);\n}\n\n.sa-onion-settings-label {\n  white-space: nowrap;\n}\n", ""]);
 
 // exports
 
@@ -10328,7 +10328,7 @@ __webpack_require__.r(__webpack_exports__);
 
   /* GUI Utils */
   function getButtonURI(name, dontCompile) {
-    const themeHex = isPM ? "#00c3ff" : document.documentElement.style.getPropertyValue("--looks-secondary") || "#ff4c4c";
+    const themeHex = isPM ? "#3835ff" : document.documentElement.style.getPropertyValue("--looks-secondary") || "#ff4c4c";
     const guiSVG = guiIMGS[name].replace("red", themeHex);
     if (dontCompile) return guiSVG;else return "data:image/svg+xml;base64," + btoa(guiSVG);
   }
@@ -10523,7 +10523,7 @@ __webpack_require__.r(__webpack_exports__);
     div.append(createBtn, deleteBtn, title1, select, title2, dirBtn);
   }
   function genButtonTable(div) {
-    const themeHex = isPM ? "#00c3ff" : document.documentElement.style.getPropertyValue("--looks-secondary") || "#ff4c4c";
+    const themeHex = isPM ? "#3835ff" : document.documentElement.style.getPropertyValue("--looks-secondary") || "#ff4c4c";
     const btnStyle = "color: #fff; font-weight: 600; text-align: center; padding: 10px; margin: 10px 5px; border: solid 2px var(--ui-black-transparent, hsla(0, 0%, 0%, 0.15)); border-radius: 5px; background: ".concat(themeHex, "; transition: transform 0.2s;");
     const enterBtn = document.createElement("button");
     enterBtn.id = "enter";
@@ -11190,7 +11190,7 @@ __webpack_require__.r(__webpack_exports__);
 
   /* GUI Utils */
   function getButtonURI(name, dontCompile) {
-    const themeHex = isPM ? "#00c3ff" : document.documentElement.style.getPropertyValue("--looks-secondary") || "#ff4c4c";
+    const themeHex = isPM ? "#3835ff" : document.documentElement.style.getPropertyValue("--looks-secondary") || "#ff4c4c";
     const guiSVG = guiIMGS[name].replaceAll("red", themeHex);
     if (dontCompile) return guiSVG;else return "data:image/svg+xml;base64," + btoa(guiSVG);
   }
@@ -12155,7 +12155,7 @@ __webpack_require__.r(__webpack_exports__);
       e.stopPropagation();
     });
     const searchBtn = document.createElement("button");
-    searchBtn.setAttribute("style", "border: none; border-radius: 5px; padding: 10px 20px; margin: 10px 0 0; background: hsla(194, 100%, 50%, 1); cursor: pointer; font-weight: 600; font-size: 0.85rem; color: white;");
+    searchBtn.setAttribute("style", "border: none; border-radius: 5px; padding: 10px 20px; margin: 10px 0 0; background: rgb(98, 0, 255); cursor: pointer; font-weight: 600; font-size: 0.85rem; color: white;");
     searchBtn.textContent = "Search";
     searchBtn.addEventListener("click", async e => {
       var _htmlText$match, _htmlText$match2, _htmlText$match3;

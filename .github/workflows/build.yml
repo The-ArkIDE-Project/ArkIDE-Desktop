@@ -2,6 +2,11 @@ name: Build and Release Electron App
 
 on:
   workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version number to release (e.g., 1.2.3)'
+        required: true
+        type: string
 
 permissions:
   contents: write
@@ -27,6 +32,11 @@ jobs:
         run: |
           npm install
           npm install --save-dev electron@latest electron-builder@latest
+      
+      - name: Set version number
+        run: |
+          echo "Setting version to ${{ github.event.inputs.version }}"
+          npm version ${{ github.event.inputs.version }} --no-git-tag-version
       
       - name: Build for Linux
         if: matrix.os == 'ubuntu-latest'

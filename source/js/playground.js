@@ -430,7 +430,7 @@ const PackagerIntegrationHOC = function PackagerIntegrationHOC(WrappedComponent)
         }
       }, e.origin);
       this.props.vm.saveProjectSb3('arraybuffer').then(buffer => {
-        const name = "".concat(this.props.reduxProjectTitle, ".pmp");
+        const name = "".concat(this.props.reduxProjectTitle, ".arkide");
         e.source.postMessage({
           p4: {
             type: 'finish-import',

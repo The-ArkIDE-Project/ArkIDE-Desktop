@@ -431,6 +431,8 @@ const Credits = () => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.
 }, "our GitHub"), " incase this one is out of date."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(UserList, {
   users: _users__WEBPACK_IMPORTED_MODULE_6__["default"].pmDevelopers
 }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", null, "The list order is randomized on each refresh.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "There are even community members who have helped develop PenguinMod. People like ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", null, "you!")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(UserList, {
+  users: _users__WEBPACK_IMPORTED_MODULE_6__["default"].arkideDevs
+}), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", null, "The list order is randomized on each refresh.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "This project is by me and a few of my friends, so updates will be very infrequent."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(UserList, {
   users: _users__WEBPACK_IMPORTED_MODULE_6__["default"].pmPullRequestDevelopers
 }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", null, "The list order is randomized on each refresh.")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "We've also included work from other open-source projects inside of PenguinMod. Here's a list of some other projects you should check out:"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(UserList, {
   users: _users__WEBPACK_IMPORTED_MODULE_6__["default"].pmCodeUsedFrom
@@ -622,6 +624,19 @@ const addonDevelopers = [{
   username: 'LilyMakesThings'
 }].map(fromHardcoded);
 const pmDevelopers = ['enderhacker', 'FreshPenguin112', 'Ianyourgod', 'JoshAtticus', 'JeremyGamer13', 'jwklong', 'tnix100', 'RedMan13', 'SharkPool-SP', 'showierdata9978'].map(fromHardcodedGithub);
+const arkideDevs = [{
+  text: 'Arc360 (Lead Developer, Owner)',
+  image: "http://arkideapi.arc360hub.com/api/v1/users/getpfp?username=ark",
+  href: "https://studio.penguinmod.com/credits.html#"
+}, {
+  text: 'Insomnia (Co-Owner, Main art lead)',
+  image: "http://arkideapi.arc360hub.com/api/v1/users/getpfp?username=insomnia64",
+  href: "https://studio.penguinmod.com/credits.html#"
+}, {
+  text: 'battman (Creator of the old mascot)',
+  image: "http://arkideapi.arc360hub.com/api/v1/users/getpfp?username=battman",
+  href: "https://studio.penguinmod.com/credits.html#"
+}];
 const pmPullRequestDevelopers = [
 // these people made a PR that got merged, or got a dev to add something they made
 {
@@ -1038,6 +1053,7 @@ const pmCodeUsedFrom = [{
 /* harmony default export */ __webpack_exports__["default"] = ({
   addonDevelopers: shuffle(addonDevelopers),
   pmDevelopers: shuffle(pmDevelopers),
+  arkideDevs: shuffle(arkideDevs),
   extensionDevelopers: shuffle(extensionDevelopers),
   pmExtensionDevelopers: shuffle(pmExtensionDevelopers),
   pmApiDevelopers: shuffle(pmApiDevelopers),

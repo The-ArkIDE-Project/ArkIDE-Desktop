@@ -2291,18 +2291,18 @@ class Renderer {
   project(id) {
     if (/^\d{6,}$/.test(id)) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "https://studio.penguinmod.com/#".concat(id)
+        href: "https://arkide.arc360hub.com/#".concat(id)
       }, "#".concat(id));
     }
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-      href: "https://penguinmod.com/search?q=%23".concat(id),
+      href: "https://arkidehome.arc360hub.com/search?q=%23".concat(id),
       target: "_blank",
       rel: "noreferrer"
     }, "#".concat(id));
   }
   mention(name) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-      href: "https://penguinmod.com/profile?user=".concat(name),
+      href: "https://arkidehome.arc360hub.com/profile?user=".concat(name),
       target: "_blank",
       rel: "noreferrer"
     }, "@".concat(name));
@@ -3290,7 +3290,7 @@ const PackagerIntegrationHOC = function PackagerIntegrationHOC(WrappedComponent)
         }
       }, e.origin);
       this.props.vm.saveProjectSb3('arraybuffer').then(buffer => {
-        const name = "".concat(this.props.reduxProjectTitle, ".pmp");
+        const name = "".concat(this.props.reduxProjectTitle, ".arkide");
         e.source.postMessage({
           p4: {
             type: 'finish-import',
@@ -3942,16 +3942,16 @@ const Footer = () => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.c
   defaultMessage: "Credits",
   id: "tw.footer.credits"
 })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("a", {
-  href: "https://penguinmod.com/donate"
+  href: "https://arkidehome.arc360hub.com/donate"
 }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_intl__WEBPACK_IMPORTED_MODULE_5__["FormattedMessage"], {
   defaultMessage: "Donate",
   id: "tw.footer.donate"
 }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
   className: _interface_css__WEBPACK_IMPORTED_MODULE_29___default.a.footerSection
 }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("a", {
-  href: "https://studio.penguinmod.com/PenguinMod-Packager"
+  href: "https://arkide.arc360hub.com/PenguinMod-Packager"
 }, 'ArkIDE Packager'), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("a", {
-  href: "https://desktop.turbowarp.org/"
+  href: "https://github.com/arc360alt/ArkIDE-Desktop"
 }, 'ArkIDE Desktop'), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("a", {
   href: "https://docs.turbowarp.org/embedding"
 }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_intl__WEBPACK_IMPORTED_MODULE_5__["FormattedMessage"], {
@@ -3970,12 +3970,12 @@ const Footer = () => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.c
 }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
   className: _interface_css__WEBPACK_IMPORTED_MODULE_29___default.a.footerSection
 }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("a", {
-  href: "https://penguinmod.com/terms"
+  href: "https://arkidehome.arc360hub.com/terms"
 }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_intl__WEBPACK_IMPORTED_MODULE_5__["FormattedMessage"], {
   defaultMessage: "Terms of Service",
   id: "pm.terms"
 })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("a", {
-  href: "https://penguinmod.com/privacy"
+  href: "https://arkidehome.arc360hub.com/privacy"
 }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_intl__WEBPACK_IMPORTED_MODULE_5__["FormattedMessage"], {
   defaultMessage: "Privacy Policy",
   id: "tw.privacy"
@@ -4073,13 +4073,13 @@ class Interface extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
       className: _interface_css__WEBPACK_IMPORTED_MODULE_29___default.a.projectDetails
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("a", {
       target: "_blank",
-      href: "https://penguinmod.com/profile?user=".concat(extraProjectInfo.author),
+      href: "https://arkidehome.arc360hub.com/profile?user=".concat(extraProjectInfo.author),
       rel: "noreferrer"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("img", {
       className: _interface_css__WEBPACK_IMPORTED_MODULE_29___default.a.projectAuthorImage,
       title: extraProjectInfo.author,
       alt: extraProjectInfo.author,
-      src: "http://arkideapis.arc360hub.com/api/v1/users/getpfp?username=".concat(extraProjectInfo.author)
+      src: "http://arkideapi.arc360hub.com/api/v1/users/getpfp?username=".concat(extraProjectInfo.author)
     })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
       className: _interface_css__WEBPACK_IMPORTED_MODULE_29___default.a.projectMetadata
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("h2", {
@@ -4088,7 +4088,7 @@ class Interface extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
       }
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("p", null, "by ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("a", {
       target: "_blank",
-      href: "https://penguinmod.com/profile?user=".concat(extraProjectInfo.author),
+      href: "https://arkidehome.arc360hub.com/profile?user=".concat(extraProjectInfo.author),
       rel: "noreferrer"
     }, extraProjectInfo.author)))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_render_gui_jsx__WEBPACK_IMPORTED_MODULE_17__["default"], _extends({
       onClickAddonSettings: handleClickAddonSettings,
@@ -4119,7 +4119,7 @@ class Interface extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
       src: "https://arkideapi.arc360hub.com/api/v1/users/getpfp?username=".concat(remixedProjectInfo.author)
     })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("p", null, "Thanks to ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("b", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("a", {
       target: "_blank",
-      href: "https://penguinmod.com/profile?user=".concat(remixedProjectInfo.author),
+      href: "https://arkidehome.arc360hub.com/profile?user=".concat(remixedProjectInfo.author),
       rel: "noreferrer"
     }, remixedProjectInfo.author)), " for the original project ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("b", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("a", {
       href: "".concat(window.location.origin, "/#").concat(extraProjectInfo.remixId)
@@ -4147,7 +4147,7 @@ class Interface extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
     }), 'Copy Link'), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("a", {
       target: "_blank",
       rel: "noreferrer",
-      href: "https://penguinmod.com/report?type=project&id=".concat(projectId),
+      href: "https://arkidehome.arc360hub.com/report?type=project&id=".concat(projectId),
       className: _interface_css__WEBPACK_IMPORTED_MODULE_29___default.a.reportLink
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("img", {
       src: "report_flag.png",
@@ -4156,7 +4156,7 @@ class Interface extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
       className: _interface_css__WEBPACK_IMPORTED_MODULE_29___default.a.section
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_tw_featured_projects_featured_projects_jsx__WEBPACK_IMPORTED_MODULE_21__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("a", {
       target: "_blank",
-      href: "https://penguinmod.com/search?q=newest:",
+      href: "https://arkidehome.arc360hub.com/search?q=newest:",
       rel: "noreferrer"
     }, "See more projects")) : null), isHomepage && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Footer, null));
   }

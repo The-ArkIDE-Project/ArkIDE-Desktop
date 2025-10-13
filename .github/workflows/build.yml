@@ -15,7 +15,19 @@ jobs:
   build:
     strategy:
       matrix:
-        os: [ubuntu-latest, windows-latest]
+        include:
+          - os: ubuntu-latest
+            arch: x64
+            platform: linux
+            artifact-name: linux-x64
+          - os: ubuntu-latest
+            arch: arm64
+            platform: linux
+            artifact-name: linux-arm64
+          - os: windows-latest
+            arch: x64
+            platform: windows
+            artifact-name: windows-x64
     
     runs-on: ${{ matrix.os }}
     
@@ -28,6 +40,12 @@ jobs:
         with:
           node-version: '20'
       
+      - name: Install dependencies for ARM build (Ubuntu ARM64)
+        if: matrix.arch == 'arm64'
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y gcc-aarch64-linux-gnu g++-aarch64-linux-gnu
+      
       - name: Install dependencies and builder
         run: |
           npm install
@@ -38,28 +56,63 @@ jobs:
           echo "Setting version to ${{ github.event.inputs.version }}"
           npm version ${{ github.event.inputs.version }} --no-git-tag-version
       
-      - name: Build for Linux
-        if: matrix.os == 'ubuntu-latest'
-        run: npx electron-builder --linux --x64 --publish always
+      - name: Build for Linux x64
+        if: matrix.platform == 'linux' && matrix.arch == 'x64'
+        run: npx electron-builder --linux AppImage --x64 --publish always
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
-      - name: Build for Windows
-        if: matrix.os == 'windows-latest'
+      - name: Build for Linux ARM64
+        if: matrix.platform == 'linux' && matrix.arch == 'arm64'
+        run: npx electron-builder --linux AppImage --arm64 --publish always
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      
+      - name: Build for Windows x64
+        if: matrix.platform == 'windows' && matrix.arch == 'x64'
         run: npx electron-builder --windows --x64 --publish always
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       
-      - name: Upload Linux artifacts
-        if: matrix.os == 'ubuntu-latest'
+      - name: Upload Linux x64 artifacts
+        if: matrix.platform == 'linux' && matrix.arch == 'x64'
         uses: actions/upload-artifact@v4
         with:
-          name: linux-build
+          name: ${{ matrix.artifact-name }}
+          path: dist/*.AppImage
+      
+      - name: Upload Linux ARM64 artifacts
+        if: matrix.platform == 'linux' && matrix.arch == 'arm64'
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ matrix.artifact-name }}
           path: dist/*.AppImage
       
       - name: Upload Windows artifacts
-        if: matrix.os == 'windows-latest'
+        if: matrix.platform == 'windows' && matrix.arch == 'x64'
         uses: actions/upload-artifact@v4
         with:
-          name: windows-build
+          name: ${{ matrix.artifact-name }}
           path: dist/*.exe
+  
+  release:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      
+      - name: Download all artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: release-artifacts
+      
+      - name: Create Release
+        uses: softprops/action-gh-release@v1
+        with:
+          tag_name: v${{ github.event.inputs.version }}
+          files: release-artifacts/**/*
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

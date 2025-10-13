@@ -7,7 +7,7 @@ function createWindow() {
   mainWindow = new BrowserWindow({
     width: 1280,
     height: 800,
-    frame: false,
+    frame: true,
     webPreferences: {
       nodeIntegration: false,
       contextIsolation: true,
@@ -34,8 +34,9 @@ mainWindow.on('close', (e) => {
     }
   });
 });
+}
   
-  // inject window title
+  /*
 mainWindow.webContents.on('did-finish-load', () => {
   mainWindow.webContents.insertCSS(`
     .electron-titlebar {
@@ -52,9 +53,9 @@ mainWindow.webContents.on('did-finish-load', () => {
     .electron-drag-overlay {
       position: fixed;
       top: 0;
-      right: 188px; /* 138px + 50px offset */
-      left: 50%; /* Start from middle of screen */
-      height: 45px; /* Cover the entire blue bar height */
+      right: 188px; 
+      left: 50%; 
+      height: 45px; 
       z-index: 999998;
       -webkit-app-region: drag;
       background: transparent;
@@ -108,6 +109,8 @@ mainWindow.webContents.on('did-finish-load', () => {
 });
 }
 
+*/
+
 // Window control handlers
 ipcMain.on('window-minimize', () => {
   mainWindow.minimize();
@@ -120,6 +123,8 @@ ipcMain.on('window-maximize', () => {
     mainWindow.maximize();
   }
 });
+
+
 
 // Update close handler
 ipcMain.on('window-close', () => {

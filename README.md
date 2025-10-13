@@ -1,11 +1,11 @@
 # Electron Baised ArkIDE Desktop app
 
 ## Linux Instructions:
-- Extract the linux.zip file
+- Download the appimage from the latest release
 - Run the appimage
 
 ## Windows Instructions: 
-- Download and extract the windows.zip file
+- Download the EXE from the latest release
 - Run the .exe
 - Install it?
 - Run the installed app

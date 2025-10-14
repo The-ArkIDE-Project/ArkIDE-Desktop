@@ -32,7 +32,7 @@ jobs:
       - name: Download release artifact
         run: |
           mkdir -p build-input
-          wget -O build-input/build.tar.gz "https://github.com/${{ github.repository }}/releases/download/${{ github.event.inputs.version }}/ArkIDE-Desktop-build.tar.gz"
+          wget -O build-input/build.tar.gz "https://github.com/${{ github.repository }}/releases/download/v${{ github.event.inputs.version }}/ArkIDE-Desktop-build.tar.gz"
           cd build-input && tar -xzf build.tar.gz && cd ..
 
       - name: Build Flatpak

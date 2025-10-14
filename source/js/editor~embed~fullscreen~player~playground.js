@@ -10487,7 +10487,7 @@ const messages = Object(react_intl__WEBPACK_IMPORTED_MODULE_5__["defineMessages"
     "defaultMessage": "All"
   }
 });
-const PM_LIBRARY_API = "https://library.arc360hub.com/";
+const PM_LIBRARY_API = "https://library.arkide.site/";
 const ALL_TAG = {
   tag: 'all',
   intlLabel: messages.allTag
@@ -11527,7 +11527,7 @@ const ActualAuthorInfo = _ref => {
       color: "white"
     },
     target: "_blank",
-    href: "https://arkidehome.arc360hub.com/profile?user=" + username
+    href: "https://arkide.site/profile?user=" + username
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_intl__WEBPACK_IMPORTED_MODULE_3__["FormattedMessage"], {
     defaultMessage: "by {username}",
     id: "gui.authorInfo.byUser",
@@ -12490,7 +12490,7 @@ class MenuBar extends react__WEBPACK_IMPORTED_MODULE_7___default.a.Component {
       className: _menu_bar_css__WEBPACK_IMPORTED_MODULE_35___default.a.menuBarItem
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement("a", {
       className: _menu_bar_css__WEBPACK_IMPORTED_MODULE_35___default.a.feedbackLink,
-      href: "https://arkidehome.arc360hub.com",
+      href: "https://arkide.site",
       rel: "noopener noreferrer",
       target: "_blank"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_7___default.a.createElement(_button_button_jsx__WEBPACK_IMPORTED_MODULE_10__["default"], {
@@ -12916,7 +12916,7 @@ class ShareButton extends react__WEBPACK_IMPORTED_MODULE_4___default.a.Component
     this.handleMessageEvent(e);
   }
   async handleMessageEvent(e) {
-    if (!e.origin.startsWith("https://arkidehome.arc360hub.com")) {
+    if (!e.origin.startsWith("https://arkide.site")) {
       return;
     }
     if (!e.data.p4) {
@@ -12995,7 +12995,7 @@ class ShareButton extends react__WEBPACK_IMPORTED_MODULE_4___default.a.Component
         editPiece = "&id=".concat(id);
       }
       const url = location.origin;
-      window.open("https://arkidehome.arc360hub.com/".concat(targetPage, "?name=").concat(this.props.projectTitle).concat(editPiece).concat(remixPiece, "&external=").concat(url), '_blank');
+      window.open("https://arkide.site/".concat(targetPage, "?name=").concat(this.props.projectTitle).concat(editPiece).concat(remixPiece, "&external=").concat(url), '_blank');
     });
   }
   render() {
@@ -13305,7 +13305,7 @@ const UserAvatar = _ref => {
   } = _ref;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("a", {
     target: "_blank",
-    href: "https://arkide.arc360hub.com/profile?user=" + username
+    href: "https://studio.arkide.site/profile?user=" + username
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("img", {
     className: classnames__WEBPACK_IMPORTED_MODULE_0___default()(className, _user_avatar_css__WEBPACK_IMPORTED_MODULE_3___default.a.userThumbnail),
     src: imageUrl
@@ -26487,9 +26487,9 @@ const messages = Object(react_intl__WEBPACK_IMPORTED_MODULE_4__["defineMessages"
 // For user-made libraries.
 const TRUSTED_LOADEXT_ORIGINS = ['https://studio.penguinmod.com',
 // for development
-'https://extensions.arc360hub.com', 'https://sharkpools-extensions.vercel.app', 'https://raw.githubusercontent.com/SharkPool-SP/SharkPools-Extensions/main',
+'https://extensions.arkide.site', 'https://sharkpools-extensions.vercel.app', 'https://raw.githubusercontent.com/SharkPool-SP/SharkPools-Extensions/main',
 // Some people cant connect to vercel
-'https://pen-group.github.io'];
+'https://pen-group.github.io', 'https://extensions.arkide.site'];
 class ExtensionLibrary extends react__WEBPACK_IMPORTED_MODULE_2___default.a.PureComponent {
   constructor(props) {
     super(props);
@@ -26596,7 +26596,7 @@ class ExtensionLibrary extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Pure
       return;
     }
     if (extensionId === 'special_penguinmodExtensionLibrary') {
-      window.open('https://extensions.arc360hub.com/');
+      window.open('https://extensions.arkide.site/');
       return;
     }
     const url = item.extensionURL ? item.extensionURL : extensionId;
@@ -27274,7 +27274,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-let origin = "https://arkide.arc360hub.com";
+let origin = "https://studio.arkide.site";
 class HomeCommunication extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
   constructor(props) {
     super(props);
@@ -31088,7 +31088,7 @@ const messages = Object(react_intl__WEBPACK_IMPORTED_MODULE_3__["defineMessages"
     "defaultMessage": "Choose a Sound"
   }
 });
-const PM_LIBRARY_API = "https://library.penguinmod.com/";
+const PM_LIBRARY_API = "https://library.arkide.site/";
 
 // @todo need to use this hack to avoid library using md5 for image
 const getSoundLibraryThumbnailData = (soundLibraryContent, isRtl) => soundLibraryContent.sort((a, b) => a.name.localeCompare(b.name)).map(sound => {
@@ -33887,7 +33887,7 @@ class CustomExtensionModal extends react__WEBPACK_IMPORTED_MODULE_1___default.a.
         name: 'Extension',
         description: 'Adds new blocks.',
         tags: ['myextensions'],
-        rawURL: 'https://arkidehome.arc360hub.com/line_blue.png',
+        rawURL: 'https://arkide.site/line_blue.png',
         featured: true,
         deletable: true,
         _id: generateRandomId()
@@ -34776,7 +34776,7 @@ const manuallyTrustExtension = url => {
  * @returns {boolean} True if the extension can is trusted
  */
 const isTrustedExtensionOrigin = url => (/* Always trust the official extension repostiories */
-url.startsWith('https://extensions.turbowarp.org/') || url.startsWith('https://extensions.penguinmod.com/') || url.startsWith('https://extensions.arc360hub.com/') || url.startsWith('https://penguinmod-extensions-gallery.vercel.app/') || /* Trust other people's galleries. These can be removed in the future, they will just show a pop-up on load if they are */
+url.startsWith('https://extensions.turbowarp.org/') || url.startsWith('https://extensions.penguinmod.com/') || url.startsWith('https://extensions.arkide.site/') || url.startsWith('https://penguinmod-extensions-gallery.vercel.app/') || /* Trust other people's galleries. These can be removed in the future, they will just show a pop-up on load if they are */
 url.startsWith('https://sharkpools-extensions.vercel.app/') ||
 // SharkPool
 url.startsWith('https://sharkpool-sp.github.io/SharkPools-Extensions/') ||
@@ -41438,8 +41438,8 @@ const menuItems = [{
   featured: true
 }, {
   name: 'ArkIDE Aditions',
-  extensionId: 'https://extensions.arc360hub.com/extensions/Ark/arkide-additons.js',
-  iconURL: 'https://extensions.arc360hub.com/images/Ark/banner.svg',
+  extensionId: 'https://extensions.arkide.site/extensions/Ark/arkide-additons.js',
+  iconURL: 'https://extensions.arkide.site/images/Ark/banner.svg',
   tags: ['penguinmod'],
   description: 'A simple extension that adds some cool new blocks for ArkIDE.',
   extDeveloper: 'Ark',
@@ -42091,7 +42091,7 @@ const menuItems = [{
     defaultMessage: "ArkIDE Extra Extensions",
     id: "pm.extraLibraryExtensions.name"
   }),
-  href: 'https://extensions.arc360hub.com/',
+  href: 'https://extensions.arkide.site/',
   extensionId: 'special_penguinmodExtensionLibrary',
   iconURL: _penguinmod_library_svg__WEBPACK_IMPORTED_MODULE_38___default.a,
   description: /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_intl__WEBPACK_IMPORTED_MODULE_1__["FormattedMessage"], {
@@ -42309,7 +42309,7 @@ if (IsLocal || IsLiveTests) {
   }, {
     name: 'fire in the hole',
     extensionId: 'https://extensions.penguinmod.com/extensions/JeremyGamer13/FireInTheHole.js',
-    iconURL: 'https://library.penguinmod.com/files/emojis/cluelesssmile.png',
+    iconURL: 'https://library.arkide.site/files/emojis/cluelesssmile.png',
     tags: ['penguinmod', 'joke'],
     internetConnectionRequired: true,
     description: 'april fools took too long man this joke is not funny anymore',

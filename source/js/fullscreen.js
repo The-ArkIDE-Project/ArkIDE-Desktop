@@ -2291,25 +2291,25 @@ class Renderer {
   project(id) {
     if (/^\d{6,}$/.test(id)) {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-        href: "https://arkide.arc360hub.com/#".concat(id)
+        href: "https://studio.arkide.site/#".concat(id)
       }, "#".concat(id));
     }
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-      href: "https://arkidehome.arc360hub.com/search?q=%23".concat(id),
+      href: "https://arkide.site/search?q=%23".concat(id),
       target: "_blank",
       rel: "noreferrer"
     }, "#".concat(id));
   }
   mention(name) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-      href: "https://arkidehome.arc360hub.com/profile?user=".concat(name),
+      href: "https://arkide.site/profile?user=".concat(name),
       target: "_blank",
       rel: "noreferrer"
     }, "@".concat(name));
   }
   emoji(name) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-      src: "https://library.penguinmod.com/files/emojis/".concat(name, ".png"),
+      src: "https://library.arkide.site/files/emojis/".concat(name, ".png"),
       alt: ":".concat(name, ":"),
       title: ":".concat(name, ":"),
       loading: "lazy",
@@ -3248,8 +3248,8 @@ function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t =
 
 
 
-const PACKAGER_URL = 'https://arkide.arc360hub.com/PenguinMod-Packager';
-const PACKAGER_ORIGIN = "https://arkide.arc360hub.com";
+const PACKAGER_URL = 'https://studio.arkide.site/PenguinMod-Packager';
+const PACKAGER_ORIGIN = "https://studio.arkide.site";
 const PackagerIntegrationHOC = function PackagerIntegrationHOC(WrappedComponent) {
   class PackagerIntegrationComponent extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
     constructor(props) {
@@ -3884,7 +3884,7 @@ const formatProjectTitle = _title => {
   const emojiRegex = /:(\w+):/g;
   return title.replace(emojiRegex, match => {
     const emojiName = match.replace(/:/gmi, '');
-    return "<img\n            src=\"https://library.penguinmod.com/files/emojis/".concat(emojiName, ".png\"\n            alt=\":").concat(emojiName, ":\"\n            title=\":").concat(emojiName, ":\"\n            loading=\"lazy\"\n            style=\"width:1.75rem;vertical-align: middle;\"\n        >");
+    return "<img\n            src=\"https://library.arkide.site/files/emojis/".concat(emojiName, ".png\"\n            alt=\":").concat(emojiName, ":\"\n            title=\":").concat(emojiName, ":\"\n            loading=\"lazy\"\n            style=\"width:1.75rem;vertical-align: middle;\"\n        >");
   });
 };
 const messages = Object(react_intl__WEBPACK_IMPORTED_MODULE_5__["defineMessages"])({
@@ -3943,14 +3943,14 @@ const Footer = () => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.c
   defaultMessage: "Credits",
   id: "tw.footer.credits"
 })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("a", {
-  href: "https://arkidehome.arc360hub.com/donate"
+  href: "https://arkide.site/donate"
 }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_intl__WEBPACK_IMPORTED_MODULE_5__["FormattedMessage"], {
   defaultMessage: "Donate",
   id: "tw.footer.donate"
 }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
   className: _interface_css__WEBPACK_IMPORTED_MODULE_29___default.a.footerSection
 }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("a", {
-  href: "https://arkide.arc360hub.com/PenguinMod-Packager"
+  href: "https://studio.arkide.site/PenguinMod-Packager"
 }, 'ArkIDE Packager'), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("a", {
   href: "https://github.com/arc360alt/ArkIDE-Desktop"
 }, 'ArkIDE Desktop'), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("a", {
@@ -3971,22 +3971,22 @@ const Footer = () => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.c
 }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("div", {
   className: _interface_css__WEBPACK_IMPORTED_MODULE_29___default.a.footerSection
 }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("a", {
-  href: "https://arkidehome.arc360hub.com/terms"
+  href: "https://arkide.site/terms"
 }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_intl__WEBPACK_IMPORTED_MODULE_5__["FormattedMessage"], {
   defaultMessage: "Terms of Service",
   id: "pm.terms"
 })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("a", {
-  href: "https://arkidehome.arc360hub.com/privacy"
+  href: "https://arkide.site/privacy"
 }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_intl__WEBPACK_IMPORTED_MODULE_5__["FormattedMessage"], {
   defaultMessage: "Privacy Policy",
   id: "tw.privacy"
 })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("a", {
-  href: "https://github.com/PenguinMod/PenguinMod-Home/issues"
+  href: "https://github.com/arc360alt/ArkIDE-Home/issues"
 }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_intl__WEBPACK_IMPORTED_MODULE_5__["FormattedMessage"], {
   defaultMessage: "Feedback & Bugs",
   id: "tw.feedback"
 })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("a", {
-  href: "https://github.com/PenguinMod"
+  href: "https://github.com/arc360alt"
 }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(react_intl__WEBPACK_IMPORTED_MODULE_5__["FormattedMessage"], {
   defaultMessage: "Source Code",
   id: "tw.code"
@@ -4074,7 +4074,7 @@ class Interface extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
       className: _interface_css__WEBPACK_IMPORTED_MODULE_29___default.a.projectDetails
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("a", {
       target: "_blank",
-      href: "https://arkidehome.arc360hub.com/profile?user=".concat(extraProjectInfo.author),
+      href: "https://arkide.site/profile?user=".concat(extraProjectInfo.author),
       rel: "noreferrer"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("img", {
       className: _interface_css__WEBPACK_IMPORTED_MODULE_29___default.a.projectAuthorImage,
@@ -4089,7 +4089,7 @@ class Interface extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
       }
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("p", null, "by ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("a", {
       target: "_blank",
-      href: "https://arkidehome.arc360hub.com/profile?user=".concat(extraProjectInfo.author),
+      href: "https://arkide.site/profile?user=".concat(extraProjectInfo.author),
       rel: "noreferrer"
     }, extraProjectInfo.author)))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_render_gui_jsx__WEBPACK_IMPORTED_MODULE_17__["default"], _extends({
       onClickAddonSettings: handleClickAddonSettings,
@@ -4111,7 +4111,7 @@ class Interface extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
         height: '32px'
       },
       target: "_blank",
-      href: "https://arkidehome.arc360hub.com/profile?user=".concat(remixedProjectInfo.author),
+      href: "https://arkide.site/profile?user=".concat(remixedProjectInfo.author),
       rel: "noreferrer"
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("img", {
       className: _interface_css__WEBPACK_IMPORTED_MODULE_29___default.a.remixAuthorImage,
@@ -4120,7 +4120,7 @@ class Interface extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
       src: "https://arkideapi.arc360hub.com/api/v1/users/getpfp?username=".concat(remixedProjectInfo.author)
     })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("p", null, "Thanks to ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("b", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("a", {
       target: "_blank",
-      href: "https://arkidehome.arc360hub.com/profile?user=".concat(remixedProjectInfo.author),
+      href: "https://arkide.site/profile?user=".concat(remixedProjectInfo.author),
       rel: "noreferrer"
     }, remixedProjectInfo.author)), " for the original project ", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("b", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("a", {
       href: "".concat(window.location.origin, "/#").concat(extraProjectInfo.remixId)
@@ -4148,7 +4148,7 @@ class Interface extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
     }), 'Copy Link'), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("a", {
       target: "_blank",
       rel: "noreferrer",
-      href: "https://arkidehome.arc360hub.com/report?type=project&id=".concat(projectId),
+      href: "https://arkide.site/report?type=project&id=".concat(projectId),
       className: _interface_css__WEBPACK_IMPORTED_MODULE_29___default.a.reportLink
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("img", {
       src: "report_flag.png",
@@ -4157,7 +4157,7 @@ class Interface extends react__WEBPACK_IMPORTED_MODULE_2___default.a.Component {
       className: _interface_css__WEBPACK_IMPORTED_MODULE_29___default.a.section
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_components_tw_featured_projects_featured_projects_jsx__WEBPACK_IMPORTED_MODULE_21__["default"], null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("a", {
       target: "_blank",
-      href: "https://arkidehome.arc360hub.com/search?q=newest:",
+      href: "https://arkide.site/search?q=newest:",
       rel: "noreferrer"
     }, "See more projects")) : null), isHomepage && /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Footer, null));
   }
@@ -4325,7 +4325,7 @@ const VoteFrame = props => /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___defau
   style: props.id != '0' ? {} : {
     display: 'none'
   },
-  src: props.id != '0' ? "https://arkidehome.arc360hub.com/embed/vote?id=".concat(props.id, "#dark=").concat(props.darkmode) : 'about:blank'
+  src: props.id != '0' ? "https://arkide.site/embed/vote?id=".concat(props.id, "#dark=").concat(props.darkmode) : 'about:blank'
 });
 /* harmony default export */ __webpack_exports__["default"] = (VoteFrame);
 

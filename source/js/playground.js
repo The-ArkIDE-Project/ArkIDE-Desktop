@@ -388,8 +388,8 @@ function _objectWithoutPropertiesLoose(r, e) { if (null == r) return {}; var t =
 
 
 
-const PACKAGER_URL = 'https://arkide.arc360hub.com/PenguinMod-Packager';
-const PACKAGER_ORIGIN = "https://arkide.arc360hub.com";
+const PACKAGER_URL = 'https://studio.arkide.site/PenguinMod-Packager';
+const PACKAGER_ORIGIN = "https://studio.arkide.site";
 const PackagerIntegrationHOC = function PackagerIntegrationHOC(WrappedComponent) {
   class PackagerIntegrationComponent extends react__WEBPACK_IMPORTED_MODULE_0___default.a.Component {
     constructor(props) {

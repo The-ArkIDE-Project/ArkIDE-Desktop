@@ -22,12 +22,12 @@ jobs:
 
       - name: Add flathub remote
         run: |
-          flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+          sudo flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
 
       - name: Install runtimes and SDK
         run: |
-          flatpak install -y flathub org.freedesktop.Platform/x86_64/23.08
-          flatpak install -y flathub org.freedesktop.Sdk/x86_64/23.08
+          sudo flatpak install -y flathub org.freedesktop.Platform/x86_64/23.08
+          sudo flatpak install -y flathub org.freedesktop.Sdk/x86_64/23.08
 
       - name: Download release artifact
         run: |
@@ -37,11 +37,12 @@ jobs:
 
       - name: Build Flatpak
         run: |
-          flatpak-builder --force-clean --repo=repo build-dir .flatpak/com.arkide.desktop.json
+          sudo flatpak-builder --force-clean --repo=repo build-dir .flatpak/com.arkide.desktop.json
 
       - name: Create bundle
         run: |
-          flatpak build-bundle repo com.arkide.desktop.flatpak com.arkide.desktop
+          sudo flatpak build-bundle repo com.arkide.desktop.flatpak com.arkide.desktop
+          sudo chown $USER com.arkide.desktop.flatpak
 
       - name: Upload to Release
         uses: softprops/action-gh-release@v1

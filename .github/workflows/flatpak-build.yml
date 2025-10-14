@@ -1,19 +1,11 @@
 name: Build Flatpak
 
 on:
-  push:
-    branches:
-      - main
-    paths:
-      - 'source/**'
-      - 'assets/**'
-      - 'package.json'
-      - 'package-lock.json'
-      - '.flatpak/com.arkide.desktop.json'
-  pull_request:
-    branches:
-      - main
   workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to build (e.g., v1.0.0)'
+        required: true
 
 jobs:
   build:
@@ -36,7 +28,12 @@ jobs:
         run: |
           flatpak install -y flathub org.freedesktop.Platform/x86_64/23.08
           flatpak install -y flathub org.freedesktop.Sdk/x86_64/23.08
-          flatpak install -y flathub org.electronjs.Electron2.BaseApp/x86_64/23.08
+
+      - name: Download release artifact
+        run: |
+          mkdir -p build-input
+          wget -O build-input/build.tar.gz "https://github.com/${{ github.repository }}/releases/download/${{ github.event.inputs.version }}/ArkIDE-Desktop-build.tar.gz"
+          cd build-input && tar -xzf build.tar.gz && cd ..
 
       - name: Build Flatpak
         run: |
@@ -46,35 +43,10 @@ jobs:
         run: |
           flatpak build-bundle repo com.arkide.desktop.flatpak com.arkide.desktop
 
-      - name: Upload artifact
-        uses: actions/upload-artifact@v4
+      - name: Upload to Release
+        uses: softprops/action-gh-release@v1
         with:
-          name: flatpak-bundle
-          path: com.arkide.desktop.flatpak
-          retention-days: 30
-
-      - name: Get version from package.json
-        id: version
-        run: echo "VERSION=$(jq -r '.version' package.json)" >> $GITHUB_OUTPUT
-
-      - name: Create Release
-        uses: ncipollo/release-action@v1
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-        with:
-          artifacts: "com.arkide.desktop.flatpak"
-          tag: "v${{ steps.version.outputs.VERSION }}-flatpak"
-          name: "ArkIDE Flatpak v${{ steps.version.outputs.VERSION }}"
-          body: |
-            ## Flatpak Release
-            
-            To install this Flatpak, run:
-            ```bash
-            flatpak install com.arkide.desktop.flatpak
-            ```
-            
-            Or add to Flathub (once available):
-            ```bash
-            flatpak install flathub com.arkide.desktop
-            ```
-          draft: false
-          prerelease: false
+          files: com.arkide.desktop.flatpak
+          tag_name: ${{ github.event.inputs.version }}-flatpak
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -24,7 +24,7 @@
       "sources": [
         {
           "type": "dir",
-          "path": "build-input"
+          "path": "../build-input"
         }
       ]
     },

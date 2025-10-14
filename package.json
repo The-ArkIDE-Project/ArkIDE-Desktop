@@ -18,18 +18,22 @@
       "main.js",
       "preload.js",
       "source/**/*",
-      "package.json"
+      "package.json",
+      "assets/**/*"
     ],
     "publish": {
       "provider": "github",
       "owner": "arc360alt",
       "repo": "ArkIDE-Desktop"
     },
+    "icon": "assets/icons/icon.png", 
     "linux": {
+      "icon": "assets/icons/icon.png",
       "target": ["AppImage"],
       "category": "Development"
     },
     "win": {
+      "icon": "assets/icons/icon.ico",
       "target": ["nsis"]
     }
   },

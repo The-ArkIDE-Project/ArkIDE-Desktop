@@ -30,6 +30,21 @@ mainWindow.webContents.on('did-finish-load', () => {
  `);
  }, 1000);
 });
+mainWindow.webContents.on('did-finish-load', () => {
+ setTimeout(() => {
+ mainWindow.webContents.executeJavaScript(`
+ (function() {
+ const elements = document.querySelectorAll('span, div, button, a');
+ for (let el of elements) {
+ if (el.textContent === 'Back to Home' || (el.children.length === 0 && el.textContent.trim() === 'Back to Home')) {
+ el.remove();
+ return;
+ }
+ }
+ })();
+ `);
+ }, 1000);
+});
 mainWindow.on('close', (e) => {
 e.preventDefault();
 dialog.showMessageBox(mainWindow, {

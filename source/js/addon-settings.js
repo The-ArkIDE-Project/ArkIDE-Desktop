@@ -2233,7 +2233,7 @@ class AddonSettingsComponent extends react__WEBPACK_IMPORTED_MODULE_0___default.
       className: _settings_css__WEBPACK_IMPORTED_MODULE_18___default.a.searchButton,
       onClick: this.handleClickSearchButton
     })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
-      href: "https://discord.gg/NZ9MBMYTZh",
+      href: "https://discord.gg/aPRchS3Zdp",
       target: "_blank",
       rel: "noreferrer",
       className: _settings_css__WEBPACK_IMPORTED_MODULE_18___default.a.feedbackButtonOuter

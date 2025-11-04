@@ -12806,7 +12806,7 @@ if(false) {}
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "static/assets/227fbb882ee0ec1b5de6b02ac00f76f3.svg";
+module.exports = __webpack_require__.p + "static/assets/af9c94cb6f7bc0b9c60e590ea0e876ce.svg";
 
 /***/ }),
 
@@ -43394,7 +43394,7 @@ module.exports = __webpack_require__.p + "static/assets/49a8736bf7fbb79e2469272f
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__.p + "static/assets/86f1588190ce778dc572e0dd39da170f.svg";
+module.exports = __webpack_require__.p + "static/assets/f1ebfab11cad5431bc3733601aac22b0.svg";
 
 /***/ }),
 

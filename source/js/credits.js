@@ -217,15 +217,7 @@ function _extends() { return _extends = Object.assign ? Object.assign.bind() : f
 const THEME_KEY = 'tw:theme';
 const darkMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
 const getInitialDarkMode = () => {
-  try {
-    const item = localStorage.getItem(THEME_KEY);
-    if (item !== null) {
-      return item === 'dark';
-    }
-  } catch (e) {
-    // ignore
-  }
-  return darkMediaQuery.matches;
+  return true; // Always return true to force dark mode
 };
 const darkModeStylesheet = document.createElement('style');
 darkModeStylesheet.textContent = _raw_loader_tw_theme_dark_css__WEBPACK_IMPORTED_MODULE_1___default.a;
@@ -236,7 +228,7 @@ const ThemeHOC = function ThemeHOC(WrappedComponent) {
       this.handleQueryChange = this.handleQueryChange.bind(this);
       this.handleClickTheme = this.handleClickTheme.bind(this);
       this.state = {
-        dark: getInitialDarkMode()
+        dark: true // Force dark mode
       };
     }
     componentDidMount() {
@@ -248,7 +240,7 @@ const ThemeHOC = function ThemeHOC(WrappedComponent) {
     }
     componentDidUpdate() {
       try {
-        localStorage.setItem(THEME_KEY, this.state.dark ? 'dark' : 'light');
+        localStorage.setItem(THEME_KEY, 'dark'); // Always save as dark
       } catch (e) {
         // ignore
       }
@@ -261,30 +253,24 @@ const ThemeHOC = function ThemeHOC(WrappedComponent) {
       }
     }
     updateDark() {
-      const dark = this.state.dark;
-      document.body.setAttribute('theme', dark ? 'dark' : 'light');
-      if (dark && !darkModeStylesheet.parentNode) {
+      const dark = true; // Force dark mode
+      document.body.setAttribute('theme', 'dark');
+      if (!darkModeStylesheet.parentNode) {
         // Append at the start of <body> we override scratch-gui styles in <head>
         // but are overridden by addon styles at the end of <body>
         document.body.insertBefore(darkModeStylesheet, document.body.firstChild);
-      } else if (!dark && darkModeStylesheet.parentNode) {
-        darkModeStylesheet.parentNode.removeChild(darkModeStylesheet);
       }
     }
     handleQueryChange() {
-      this.setState({
-        dark: darkMediaQuery.matches
-      });
+      // Do nothing - keep dark mode
     }
     handleClickTheme() {
-      this.setState(state => ({
-        dark: !state.dark
-      }));
+      // Do nothing - prevent theme switching
     }
     render() {
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(WrappedComponent, _extends({
         onClickTheme: this.handleClickTheme,
-        isDark: this.state.dark
+        isDark: true // Always pass true
       }, this.props));
     }
   }

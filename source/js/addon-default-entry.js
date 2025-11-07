@@ -11521,7 +11521,11 @@ __webpack_require__.r(__webpack_exports__);
     modalStorage.sessionStore = {};
     const modal = document.createElement("div");
     modal.classList.add("costume-tool-modal");
-    modal.setAttribute("style", "color: var(--paint-text-primary, #575e75); width: 275px; height: 350px; z-index: 99999; display: block; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); background: var(--ui-secondary, hsla(215, 75%, 95%, 1)); border: solid 2px var(--ui-black-transparent, hsla(0, 0%, 0%, 0.15)); border-radius: 5px; padding: 15px;");
+
+    // Check if dark mode
+    const isDarkMode = document.body.getAttribute('theme') === 'dark';
+    const backgroundColor = isDarkMode ? "rgba(73, 78, 114, 0.72)" : "rgba(239, 241, 245, 0.72)";
+    modal.setAttribute("style", "color: var(--paint-text-primary, #575e75); width: 275px; height: 350px; z-index: 99999; display: block; position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); background: ".concat(backgroundColor, "; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); border: solid 2px var(--ui-black-transparent, hsla(0, 0%, 0%, 0.15)); border-radius: 5px; padding: 15px;"));
     modal.id = "draggable";
     const title = document.createElement("span");
     title.setAttribute("style", "display: block; text-align: center; justify-content: center; border-bottom: solid 2px var(--ui-black-transparent, hsla(0, 0%, 0%, 0.15)); padding-bottom: 10px; margin: 0 25px 0 25px; font-weight: 600;");
@@ -11547,7 +11551,7 @@ __webpack_require__.r(__webpack_exports__);
     });
     const toolDisplay = document.createElement("div");
     toolDisplay.id = "tool-display";
-    toolDisplay.setAttribute("style", "display: block; overflow-y: scroll;width: auto;height: 300px; margin-top: 15px;background: var(--ui-white);border: solid 2px grey;border-radius: 5px;");
+    toolDisplay.setAttribute("style", "display: block; overflow-y: scroll; width: auto; height: 300px; margin-top: 15px; background: var(--ui-white); border: solid 2px grey; border-radius: 5px;");
     modalStorage.toolDiv = toolDisplay;
     generateToolDisplay();
     modal.append(title, closeBtn, toolDisplay);
